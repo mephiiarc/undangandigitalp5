@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maps</title>
+  <style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #2F3E39;
+  background-image: url(img/background.png);
+}
+
+.maps-container {
+  text-align: center;
+  padding: 30px;
+  background-color: #e8d9cd;
+  margin-top: 40px;
+  border-radius: 15px;
+}
+
+.header h1 {
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+}
+
+.countdown-container {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e8d9cd;
+  padding: 15px 25px;
+  border-radius: 20px 20px 0 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bottom-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+}
+
+.bottom-nav img {
+  width: 25px;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.bottom-nav a:hover {
+  color: #4f5f5a;
+}
+
+.maps {
+    margin: 20px 0;
+}
+
+.maps iframe {
+    border-radius: 10px;
+    width: 300px;
+    height: 200px;
+    border: none;
+}
+
+.event-schedule {
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+    max-width: 400px; 
+    margin: 0 auto; 
+    padding: 20px;
+}
+
+.event-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 45%; 
+    max-width: 160px; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; 
+}
+
+.event-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.event-item h3 {
+    font-size: 1rem;
+    margin: 5px 0 0;
+    color: #2f3f34;
+}
+
+.button {
+  background-color: white;
+  color: black;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background-color: #a0a0a0;
+    padding: 13px 23px;
+    font-size: 18px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="maps-container">
+    <div class="header">
+      <h1>Akan dilaksanakan pada</h1>
+      <div class="event-schedule">
+        <div class="event-item date">
+            <p>Tanggal</p>
+            <h3>28-03-2025</h3>
+        </div>
+        <div class="event-item time">
+            <p>Jam</p>
+            <h3>09:00 - Selesai</h3>
+        </div>
+    </div>
+
+    <div class="countdown-container">
+      <p id="countdown"></p>
+    </div>
+
+    <div class="maps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.1923931060915!2d114.57539799999996!3d-3.302512899999988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de42312c676b753%3A0x82f4aeb0369d72b!2sGedung%20Chandra!5e0!3m2!1sid!2sid!4v1726034799312!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <a href="https://maps.app.goo.gl/RdtmFnkbZ3Grn368A"><btn class="button">Open</btn></a>
+    
+
+    <div class="bottom-nav">
+      <a href="index.html"><img src="svg/house-fill.svg" alt="Home">Home</a>
+      <a href="mempelai.html"><img src="svg/person-fill.svg" alt="Mempelai" href="mempelai.html">Mempelai</a>
+      <a href="maps.html"><img src="svg/geo-alt-fill.svg" alt="Maps">Maps</a>
+      <a href="galeri.html"><img src="svg/card-image.svg" alt="Penutup">Galeri</a>
+      <a href="penutup.html"><img src="svg/journals.svg" alt="Penutup">Penutup</a>
+   </div>
+  </div>
+
+  <script>
+    var weddingDate = new Date("March 28, 2025 09:00:00").getTime();
+
+    var countdownFunction = setInterval(function() {
+      var now = new Date().getTime();
+      var timeRemaining = weddingDate - now;
+
+      var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+
+      if (timeRemaining < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "Hari Pernikahan Telah Tiba!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

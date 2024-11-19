@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow Pernikahan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Libre Baskerville', serif;
+            background-color: #2e4235;
+            background-image: url('img/background.png');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #000;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 80%;
+            margin: auto;
+            background-color: #f4e7d1;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slides {
+            display: none;
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .slides img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 3px;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .bottom-nav {
+    display: flex;
+    justify-content: space-between; 
+    background-color: #f6e4d5;
+    padding: 15px 25px; 
+    border-radius: 20px 20px 0 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    animation: SlideInReverse 0.9s ease-in;
+  }
+  
+  .bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .bottom-nav img {
+    width: 25px;
+    height: auto;
+    margin-bottom: 5px;
+  }
+  
+  .bottom-nav a:hover {
+    color: #4f5f5a;
+  }
+
+
+        @media (max-width: 300px) {
+
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <div class="slides">
+        <img src="img/slideshow (1).jpg" alt="Gambar 1">
+    </div>
+
+    <div class="slides">
+        <img src="img/slideshow (2).jpg" alt="Gambar 2">
+    </div>
+
+    <div class="slides">
+        <img src="img/slideshow (3).jpg" alt="Gambar 3">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<div class="bottom-nav">
+    <a href="index.html"><img src="svg/house-fill.svg" alt="Home">Home</a>
+    <a href="mempelai.html"><img src="svg/person-fill.svg" alt="Mempelai" href="mempelai.html">Mempelai</a>
+    <a href="maps.html"><img src="svg/geo-alt-fill.svg" alt="Maps">Maps</a>
+    <a href="galeri.html"><img src="svg/card-image.svg" alt="Penutup">Galeri</a>
+    <a href="penutup.html"><img src="svg/journals.svg" alt="Penutup">Penutup</a>
+ </div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        let dots = document.getElementsByClassName("dot");
+
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+</script>
+
+</body>
+</html>

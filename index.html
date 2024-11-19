@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: #2F3E39;
+    background-image: url(img/background.png);
+  }
+  
+  .cover-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .header {
+    background-color: #f6e4d5; 
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    animation: SlideIn 0.9s ease-in;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  
+  .couple-photo-container {
+    background-color: #f6e4d5; 
+    width: 200px; 
+    border-radius: 20px; 
+    padding: 10px; 
+    margin: 0 auto 20px;
+    border-radius: 15px 15px 0 0;
+    animation: FadeIn 0.9s ease-in;
+  }
+  
+  .couple-photo img {
+    width: 100%;
+    object-fit: cover;
+    animation: FadeIn 0.9s ease-in;
+  }
+  
+
+  .invitation-text h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+    animation: FadeIn 0.9s ease-in;
+  }
+  
+  .invitation-text p {
+    color: #e0ddd7;
+    font-size: 14px;
+    margin-bottom: 20px;
+    animation: FadeIn 0.9s ease-in;
+  }
+  
+
+  .open-invitation-btn {
+    background-color: #f6e4d5;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease;
+    animation: FadeIn 0.9s ease-in;
+  }
+  
+  .open-invitation-btn:hover {
+    background-color: #e3ceb4;
+    padding: 13px 23px;
+    font-size: 18px;
+  }
+  
+ 
+.bottom-nav {
+    display: flex;
+    justify-content: space-between; 
+    background-color: #f6e4d5;
+    padding: 15px 25px; 
+    border-radius: 20px 20px 0 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    animation: SlideInReverse 0.9s ease-in;
+  }
+  
+  .bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .bottom-nav img {
+    width: 25px;
+    height: auto;
+    margin-bottom: 5px;
+  }
+  
+  .bottom-nav a:hover {
+    color: #4f5f5a;
+  }
+
+  @keyframes SlideInReverse {
+    from { transform: translateY(100%);}
+    to { transform: translateY(0)}
+  }
+
+  @keyframes SlideIn {
+    from { transform: translateY(-100%);}
+    to { transform: translateY(0)}
+  }
+
+  @keyframes FadeIn {
+    from { opacity: 0;}
+    to { opacity: 1;}
+  }
+  
+  @media (max-width: 300px) {
+    .couple-photo-container {
+      width: 80%;
+    }
+ } 
+  </style>
+</head>
+<body>
+  <div class="cover-container">
+    <div class="header">
+      <h1>Undangan Pernikahan</h1>
+    </div>
+
+    
+    <div class="couple-photo-container">
+      <div class="couple-photo">
+        <img src="img/couple.png" alt="Aldi and Jane">
+      </div>
+    </div>
+
+    
+    <div class="invitation-text">
+      <h2>Aldi & Jane</h2>
+      <p>Yth. Bapak/Ibu/Saudara/i</p>
+    </div>
+
+    
+    <a class="open-invitation-btn" href="mempelai.html">Open Invitation</a>
+
+    
+    <div class="bottom-nav">
+      <a href="index.html"><img src="svg/house-fill.svg" alt="Home">Home</a>
+      <a href="mempelai.html"><img src="svg/person-fill.svg" alt="Mempelai" href="mempelai.html">Mempelai</a>
+      <a href="maps.html"><img src="svg/geo-alt-fill.svg" alt="Maps">Maps</a>
+      <a href="galeri.html"><img src="svg/card-image.svg" alt="Penutup">Galeri</a>
+      <a href="penutup.html"><img src="svg/journals.svg" alt="Penutup">Penutup</a>
+   </div>
+</body>
+</html>
